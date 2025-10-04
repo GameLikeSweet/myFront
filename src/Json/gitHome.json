@@ -1,0 +1,90 @@
+
+{
+    "css": "./gitHome.css",
+    "0": {
+        "target": "main",
+        "type": "section",
+        "title": "gitTop",
+        "0": {
+            "title": "aboutGit",
+            "type": "article",
+            "0" : "<h1>Git이란?</h1>",
+            "1": "<img src='./resource/Git.png'><p><h1>Git</h1></p>",
+            "2": "<div class='gitLink'><a href='https://git-scm.com/' target=_blank> -> git 공식 주소 사이트</a> </p></div>",
+            "3" : "<p>Git은 무료 오픈 소스 버전 컨트롤 시스템으로 빠르고 효율적으로 작은 프로젝트부터 대규모 프로젝트까지 모두 처리하도록 설계되어있다.</p>"
+        }
+    },
+    "1" : {
+        "target" : "main",
+        "type" : "section",
+        "title" : "settingGit",
+        "0" : {
+            "title" : "donwloadGit",
+            "type" : "article",
+            "0" : "<div><h2>Git 설치</h2>",
+            "1" : "<img src='./resource/gitDonwload.png'>",
+            "2" : "<p><br>github의 공식 홈페이지에서 쉽게 다운로드 할 수 있으며 setup 파일을 통해 간단하게 설치할 수 있다.</p></div>"
+        },
+        "2" :{
+            "title" : "settingGit",
+            "type" : "article",
+            "0" : "<h1>Git Config</h1><img src='./resource/gitConfig.png'>",
+            "1" : "<div><p>git을 통해서 작업을 커밋(변경 작업들을 저장소에 기록하는 동작)할 시 git은 사용자 정보를 사용한다. 따라서 git설치 후",
+            "2" : "우선 해야 할 것은 사용자 정보를 입력하는것이다.</div>",
+            "3" : "<div class='gitCommand'>git config --global user.name 'tester'<br>",
+            "4" : "git config --global user.email 'tester@test.com'</div>",
+            "5" : "<p>이렇게 설정하면 git을 이용해서 커밋할 때마다 항상 이 정보를 사용하다. 만약 프로젝트마다 따로 관리하고 싶으면 --global을 제거하면 된다.</p>"
+        },
+        "3" : {
+            "title" : "gitRemote",
+            "type" : "article",
+            "0" : "<h2>Git remote</h2>",
+            "1" : "<p>remote 저장소란 인터넷이나 네트워크 어딘가에 있는 저장소를 말한다.",
+            "2" : "이 리모트 저장소를 관리할 줄 알아야 다른 사람과 함께 협업할 수 있다",
+            "3" : "<br>리모트 저장소는 관리하면서 데이터를 거기에 push 하거나 pull 할 수 있다.</p>",
+            "4" : "<div class='gitCommand'>git remote<br>git remote add '이름' '저장소 url'</div>",
+            "5" : "<p> git remote 명령을 통해서 remote 저장소를 확인하고 git remote add 명령을 통해서 저장소를 추가 할 수 있다.</p>"
+        }
+    },
+    "3" : {
+        "target": "main",
+        "type" : "section",
+        "title" : "gitStart",
+        "0" : {
+            "type" :"article",
+            "title" : "gitInit1",
+            "0": "<div><h1>Git Init</h1>",
+            "1" : "<p>git을 시작하려면 git 저장소가 필요하다. 주로 다음 두 가지 중 한 가지 방법으로 Git 저장소를 쓰기 시작한다.</p></div>",
+            "2" : "<ol class='gitCommand'><li>아직 버전관리를 하지 않는 로컬 디렉토리 하나를 선택해서 Git 저장소를 적용하는 방법</li>",
+            "3" : "<li>다른 어딘가에서 Git 저장소를 Clone 하는 방법</li></ol>"
+        },
+        "1" : {
+            "type" : "article",
+            "title" : "gitInit2",
+            "0" : "<h1>기존 디렉토리를 Git 저장소로 만들기</h1>",
+            "1" : "<div><p>Git을 사용하여 버전관리를 하지 안는 기존 프로젝트를 Git으로 관리하고 싶은경우 우선 해당 프로젝트의 디렉토리로 이동한다</p>",
+            "2" : "<div class='gitCommand'><p>Linux : cd /home/user/new_project<br>Windows : cd /c/user/my_project</p></div>",
+            "3" : "<p> 그리고 아래와 같은 명령을 실행한다. </p>",
+            "4" : "<div class='gitCommand'>git init </div>",
+            "5" : "<p>이 명령은 .git이라는 하위 디렉토리를 만들고 .git 디렉토리에는 저장소에 필요한 파일이 들어간다",
+            "6" : "이 때 아직 프로젝트의 어떤 파일도 관리하지 않는다.</p></div>"
+        },
+        "2" : {
+            "type": "article",
+            "title" : "gitAdd",
+            "0" : "<h1>Git add</h1>",
+            "1" : "<p>Git이 파일을 관리하게 하려면 저장소에 파일을 추가하고 커밋해야 한다. git add 명령으로 파일을 추가할 수 있다.</p>",
+            "2" : "<div class='gitCommand'><p>git add .<br> git add '파일명'</p></div>",
+            "3" : "<p>git add . 명령으로 폴더 내부의 전체 파일을 추가 할 수 있고, git add '파일명'을 통해서 개별 파일을 git에 추가할 수 있다.<br>",
+            "4" : "git staus 명령을 통해서 현제 파일의 상태를 확인 할 수 있다."
+        },
+        "3" : {
+            "type" : "article",
+            "title" : "gitCommit",
+            "0" : "<h1>Git commit</h1>",
+            "1" : "<p>현재 작업하고 있는 폴더 및 파일들의 상태를 저장할 수 있다. 이 때 저장한 커밋들을 이용해서 작업물의 상태를 해당 시점으로 되돌릴 수 있다.</p>",
+            "2" : "<div class='gitCommand'><p>git commit<br>또는<br>git commit -m '설명' // -m로 커밋 메시지 작성</p></div>"
+        }
+
+    }
+}
