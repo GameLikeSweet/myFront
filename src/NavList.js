@@ -14,10 +14,9 @@ export default function NavList() {
 
   // 렌더링 직후 ref 세팅
   useLayoutEffect(() => {
-    // 모든 요소가 채워졌을 때에만 ready 상태 변경
     const allReady = menuList.every((_, i) => liRefs.current[i]);
     if (allReady) setReady(true);
-  });
+  }, [setReady]);
 
   useLayoutEffect(() => {
     if (!ready) return; // 준비 안되었으면 패스

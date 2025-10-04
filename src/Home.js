@@ -3,10 +3,10 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 import 'swiper/css';
-import Home_Intro from './Home_Intro';
-import Home_About from "./Home_About";
-import Home_News from "./Home_News";
-import Home_WorkPage from './Home_WorkPage';
+import HomeIntro from './Home_Intro';
+import HomeAbout from "./Home_About";
+import HomeNews from "./Home_News";
+import HomeWorkPage from './Home_WorkPage';
 
 
 export default function Home() {
@@ -21,16 +21,16 @@ export default function Home() {
     return (
         <div id="Home" >
             {/* Intro Section */}
-            <Home_Intro />
+            <HomeIntro />
 
             {/* About Section */}
-            <Home_About />
+            <HomeAbout />
 
             {/* News Section */}
-            <Home_News />
+            <HomeNews />
 
             {/* Pages Section */}
-            <Home_WorkPage />
+            <HomeWorkPage />
         </div>
 
     )
