@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import styles from './scss/Home.module.scss';
+import { useState, useEffect } from 'react';
+
 
 export default function Home_News() {
     const articleList = [
@@ -23,6 +25,46 @@ export default function Home_News() {
         "2025-08-06 - HTML, CSS, JS 기반의 블로그 메인 페이지 News 부분 Node.js 및 React 기반으로 변경"
     ];
     const defaultThumbnail = "https://via.placeholder.com/150";
+
+
+    const [dailyTitle, setDailyTitle] = useState('로딩 중...');
+    const [dailyIdx, setDailyIdx] = useState(null);
+
+
+
+    useEffect(() => {
+
+        const KST_OFFSET = 9 * 60 * 60 * 1000;
+        const dailyNum = Math.floor((Date.now() + KST_OFFSET) / 86400000);
+
+        // 2025-10-13 기준 실버~골드 한글 문제
+        const koreanProblems = [
+            1012, 10814, 10816, 10828, 10845, 11047, 11286, 11659, 11724, 11866,
+            1260, 1389, 1406, 1436, 1541, 1620, 1654, 1697, 1715, 17298, 17478,
+            1753, 1764, 1780, 18258, 1874, 18870, 1912, 1920, 1927, 1929, 1931,
+            1932, 1991, 1992, 2003, 2108, 2178, 2217, 2293, 2294, 2470, 2493,
+            2504, 2559, 2579, 2606, 2630, 2667, 2751, 2805, 2839, 5430, 7562,
+            7576, 7569, 9012, 9251, 9461, 9663, 1149, 1167, 11726, 11727, 11779,
+            12865
+        ];
+
+        const idx = dailyNum % koreanProblems.length;
+        setDailyIdx(koreanProblems[idx]);
+    }, []);
+
+
+    useEffect(() => {
+        if (!dailyIdx) return;
+
+        fetch(`https://solved.ac/api/v3/problem/show?problemId=${dailyIdx}`)
+            .then((res) => res.json())
+            .then((data) => setDailyTitle(data.titleKo))
+            .catch(() => setDailyTitle('문제 제목 불러오기 실패'));
+    }, [dailyIdx]);
+
+    if (!dailyIdx) return <p>로딩 중...</p>;
+
+    const dailyLink = `https://www.acmicpc.net/problem/${dailyIdx}`;
 
     return (
         <section>
@@ -57,7 +99,24 @@ export default function Home_News() {
                         </ul>
                     </div>
                 </div>
-                
+            </div>
+
+            <div className={styles.daily}>
+                <div className={styles.dailyTop}>
+                    <h2>Daily Study</h2>
+                </div>
+                <div className={styles.dailyBot}>
+                    <div className={styles.dailyQuest}>
+                        <a href={dailyLink} target='_blink'>
+                            <div className={styles.questBox}>
+                                <p>{dailyIdx} - {dailyTitle}</p>
+                                <div className={styles.dailyThumbnail}>
+
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
     )
