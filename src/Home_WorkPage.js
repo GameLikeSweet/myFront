@@ -40,9 +40,9 @@ export default function Home_WorkPage() {
 function PageDefault({hrefLink, thumbNailLink, pageTitle}) {
     return (
         <div className={styles.pages}>
-            <a href={hrefLink} target='_blank'>
+            <a href={link} target="_blank" rel="noreferrer">
                 <div className={styles.thumbNail}>
-                    <img src={thumbNailLink} />
+                    <img src={imgSrc} alt="작업 썸네일" />
                     <p className={styles.title}>{pageTitle}</p>
                 </div>
             </a>
