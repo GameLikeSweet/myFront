@@ -107,7 +107,7 @@ export default function Home_News() {
                 </div>
                 <div className={styles.dailyBot}>
                     <div className={styles.dailyQuest}>
-                        <a href={dailyLink} target='_blink'>
+                        <a href={dailyLink} target="_blank" rel="noreferrer noopener">
                             <div className={styles.questBox}>
                                 <p>{dailyIdx} - {dailyTitle}</p>
                                 <div className={styles.dailyThumbnail}>
