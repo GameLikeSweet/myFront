@@ -1,0 +1,6 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+  functions = "netlify/functions"   # ← 함수 폴더 지정
+
+# (선택) 정적 자산 캐시 정책 등 추가 가능

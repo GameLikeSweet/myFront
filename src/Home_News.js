@@ -27,7 +27,7 @@ export default function Home_News() {
     const defaultThumbnail = "https://via.placeholder.com/150";
 
 
-    const [dailyTitle, setDailyTitle] = useState('로딩 중...');
+
     const [dailyIdx, setDailyIdx] = useState(null);
 
 
@@ -52,15 +52,23 @@ export default function Home_News() {
         setDailyIdx(koreanProblems[idx]);
     }, []);
 
+    const [dailyTitle, setDailyTitle] = useState('로딩 중...');
 
     useEffect(() => {
         if (!dailyIdx) return;
 
-        fetch(`https://solved.ac/api/v3/problem/show?problemId=${dailyIdx}`)
-            .then((res) => res.json())
-            .then((data) => setDailyTitle(data.titleKo))
-            .catch(() => setDailyTitle('문제 제목 불러오기 실패'));
+        fetch(`/.netlify/functions/solvedac?id=${dailyIdx}`, { cache: 'no-store' })
+            .then((res) => {
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                return res.json();
+            })
+            .then((data) => setDailyTitle(data.titleKo || '(제목 없음)'))
+            .catch((err) => {
+                console.warn('solved.ac fetch 실패:', err.message);
+                setDailyTitle('문제 제목 불러오기 실패');
+            });
     }, [dailyIdx]);
+
 
     if (!dailyIdx) return <p>로딩 중...</p>;
 
