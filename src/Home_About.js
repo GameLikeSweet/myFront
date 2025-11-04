@@ -19,7 +19,6 @@ function Home_Intro() {
   return (
     <section className={styles.aboutSection}>
       <div className={styles.aboutMe}>
-        <h2>나에 대해서</h2>
         <p>
           웹 퍼블리셔로 <b>HTML, CSS, JS</b>을 기반으로한 다양한 <b>Jquery, AOS , Swiper</b> 같은
           라이브러리를 다루고 있습니다. 프론트 엔지니어까지 성장 할 수 있도록 <b>React, Node.js</b>등을 공부하고 있습니다.

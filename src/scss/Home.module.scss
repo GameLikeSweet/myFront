@@ -3,19 +3,17 @@ body {
     overflow: hidden;
 }
 */
-article {
-    min-height: 45%;
-    height: auto;
-}
 
 .home {
     section {
         height: 100vh;
+        min-width: 1020px;
     }
 }
 
-section:nth-child(2n) {
-    background-color: #E6ECF2;
+
+.intro {
+     height: 50vh;
 }
 
 .introMain {
@@ -45,7 +43,7 @@ section:nth-child(2n) {
 
 .aboutMe {
     width: 600px;
-    height: 200px;
+    height: 50vh;
     display: flex;
     flex-wrap: wrap;
     position: absolute;
@@ -114,6 +112,7 @@ section:nth-child(2n) {
     box-sizing: border-box;
     position: relative;
     text-align: center;
+    overflow: hidden;
 
     .newsTop {
         margin-bottom: 20px;
@@ -234,6 +233,7 @@ section:nth-child(2n) {
     box-sizing: border-box;
     position: relative;
     text-align: center;
+
     
 
     .dailyTop {
@@ -264,6 +264,7 @@ section:nth-child(2n) {
             justify-content: flex-start;
             a {
                 color: black;
+                background-color: #ffffff;
                 margin: auto;
                 .questBox{
                     width: 800px;
@@ -290,7 +291,7 @@ section:nth-child(2n) {
     .pages {
         width: 400px;
         height: 300px;
-        background-color: white;
+        background-color: #E6ECF2;
         margin: 10px auto;
         margin-left: 0;
         display: flex;

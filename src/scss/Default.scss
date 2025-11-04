@@ -13,7 +13,9 @@ body {
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    padding: 0 !important
+    padding: 0 !important;
+    min-width: 1280px;
+    overflow: scroll;
 }
 
 /*헤더*/
@@ -185,15 +187,15 @@ a {
 section {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
-    min-height: 100vh;
+    max-width: 1280px;
+    min-height: 720px;
     height: fit-content;
     margin: 0 auto;
     padding: 0;
     padding-top: 100px;
     box-sizing: border-box;
     position: relative;
-
+    background-color: #ffffff;
 }
 
 .gitCommand {

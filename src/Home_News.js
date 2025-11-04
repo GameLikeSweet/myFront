@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import styles from './scss/Home.module.scss';
 import { useState, useEffect } from 'react';
+import DailyLogo from './resource/baekjoonlogo.png';
 
 
 export default function Home_News() {
@@ -24,7 +25,7 @@ export default function Home_News() {
     const changeLogs = [
         "2025-08-06 - HTML, CSS, JS 기반의 블로그 메인 페이지 News 부분 Node.js 및 React 기반으로 변경"
     ];
-    const defaultThumbnail = "https://via.placeholder.com/150";
+    const defaultThumbnail = DailyLogo;
 
 
 
@@ -119,7 +120,12 @@ export default function Home_News() {
                             <div className={styles.questBox}>
                                 <p>{dailyIdx} - {dailyTitle}</p>
                                 <div className={styles.dailyThumbnail}>
-
+                                        <img
+                                            className={styles.thumbnailImg}
+                                            src={defaultThumbnail}
+                                            alt={'daily logo'}
+                                            style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                                        />
                                 </div>
                             </div>
                         </a>
