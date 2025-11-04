@@ -108,7 +108,6 @@ body {
     height: 30vh;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
-    padding: 40px 5% 60px;
     box-sizing: border-box;
     position: relative;
     text-align: center;
@@ -143,7 +142,7 @@ body {
 
             .letter {
                 width: 180px;
-                height: 280px;
+                max-height: 280px;
                 border-radius: 15px;
                 padding: 10px;
                 box-sizing: border-box;
@@ -229,7 +228,6 @@ body {
 
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
-    padding: 40px 5% 60px;
     box-sizing: border-box;
     position: relative;
     text-align: center;
