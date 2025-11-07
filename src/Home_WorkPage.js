@@ -11,7 +11,7 @@ export default function Home_WorkPage() {
         {
             href : 'https://lustrous-douhua-752b46.netlify.app/heroes',
             thumbNail : 'https://s0.wp.com/mshots/v1/https://lustrous-douhua-752b46.netlify.app/heroes',
-            pageTitle : '오버워치 영웅'
+            pageTitle : '오버워치 영웅 선택 구현'
         },
         {
             href : 'https://verdant-sprite-527de9.netlify.app/',

@@ -295,6 +295,7 @@ body {
         display: flex;
         box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
         border-radius: 15px;
+        transition-duration: 1s;
 
         a {
             width: 100%;
@@ -326,6 +327,10 @@ body {
 
             }
         }
+    }
+
+    .pages:hover{
+        transform:scale(1.1);
     }
 
     .pages:nth-child(2n) {
